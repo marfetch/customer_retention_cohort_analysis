@@ -46,6 +46,25 @@ def plot_retention_heatmap(
     return _save_or_return(fig, ax, save_path)
 
 
+def plot_retention_heatmap_without_m0(
+    retention_matrix: pd.DataFrame,
+    title: str = "Monthly Retention Heatmap without M0",
+    save_path: str | Path | None = None,
+):
+    """Plot a monthly retention heatmap excluding month 0."""
+    matrix = retention_matrix.copy()
+    m0_columns = [column for column in matrix.columns if str(column) == "0"]
+
+    if not m0_columns:
+        raise ValueError("Retention matrix does not contain an M0 column named 0.")
+
+    matrix = matrix.drop(columns=m0_columns)
+    if matrix.empty:
+        raise ValueError("Retention matrix without M0 is empty.")
+
+    return plot_retention_heatmap(matrix, title=title, save_path=save_path)
+
+
 def plot_d7_d30_d90_by_cohort(
     retention_df: pd.DataFrame,
     save_path: str | Path | None = None,

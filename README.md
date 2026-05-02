@@ -126,6 +126,8 @@ python -m ipykernel install --user --name customer-retention-cohort-analysis
 
 ![Retention Heatmap](images/retention_heatmap.png)
 
+![Retention Heatmap without M0](images/retention_heatmap_without_m0.png)
+
 ![D7/D30/D90 by Channel](images/d7_d30_d90_by_channel.png)
 
 ![Revenue per Customer by Channel](images/revenue_per_customer_by_channel.png)

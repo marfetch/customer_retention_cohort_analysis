@@ -36,6 +36,8 @@
 
 ![Retention Heatmap](../images/retention_heatmap.png)
 
+![Retention Heatmap without M0](../images/retention_heatmap_without_m0.png)
+
 ## Основные результаты по каналам
 
 | Метрика | Значение |
